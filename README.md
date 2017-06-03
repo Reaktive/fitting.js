@@ -22,7 +22,7 @@ Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
     content_type : "form", // options: [text, alert, confirm, html, form]
     class : "",  // fitting custom class
     effect : "slide", // options: [slide, fade, scale, blur]
-    style: "dark", // options: [dark, light, custom]
+    style: "dark", // options: [dark, light]
     outter_click : true, // should we close the modal when clicking the parent?
     title : "Contact Form", // modal title
     close: '<i class="material-icons icon">&#xE14C;</i>', // close button markup
