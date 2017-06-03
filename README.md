@@ -136,7 +136,7 @@ Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
   your_modal.hide();
 ```
 
-# Enjoy your modal!
+## Enjoy your modal!
 
 # License
 [MIT](https://github.com/Reaktive/fitting.js/blob/master/LICENSE)
