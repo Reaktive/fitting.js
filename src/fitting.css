@@ -10,6 +10,8 @@
 	background: rgba(0,0,0,0.5);
 	opacity: 0;
 	transition: opacity ease-in-out 0.2s;
+	color: #fff;
+	font-family: Helvetica, Arial, inherit;
 }
 
 .fitting_container.blur{
