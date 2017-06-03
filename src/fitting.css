@@ -11,7 +11,7 @@
 	opacity: 0;
 	transition: opacity ease-in-out 0.2s;
 	color: #fff;
-	font-family: Helvetica, Arial, inherit;
+	font-family: Helvetica, Arial;
 }
 
 .fitting_container.blur{
@@ -146,6 +146,9 @@
 }
 .fitting_content .fitting_html p {
 	margin: 0;
+}
+.fitting_content p.fitting_content_text {
+	margin: 0 0 10px;
 }
 .fitting_content_form label {
 	display: block;
