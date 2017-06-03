@@ -1,6 +1,10 @@
 # fitting.js
 Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
 
+# Demos
+[Contact Form](https://jsfiddle.net/146qpfuo/1/)
+[Confirmation request](https://jsfiddle.net/ws4mxkwe/3/)
+
 # Usage
 
 ### Include the library files
