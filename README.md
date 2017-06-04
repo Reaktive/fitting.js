@@ -2,8 +2,8 @@
 Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
 
 # Demos
-* [Contact Form](https://jsfiddle.net/146qpfuo/2/){:target="_blank"}
-* [Confirmation request](https://jsfiddle.net/ws4mxkwe/4/){:target="_blank"}
+* [Contact Form](https://jsfiddle.net/146qpfuo/2/)
+* [Confirmation request](https://jsfiddle.net/ws4mxkwe/4/)
 
 # Usage
 
