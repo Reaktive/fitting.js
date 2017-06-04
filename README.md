@@ -144,4 +144,4 @@ Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
 Enjoy your modal!
 
 # License
-Code copyright 2017 CodePunkStudio. Code released under the [MIT](https://github.com/Reaktive/fitting.js/blob/master/LICENSE){:target="_blank"}  License.
+Code copyright 2017 CodePunkStudio. Code released under the [MIT](https://github.com/Reaktive/fitting.js/blob/master/LICENSE)  License.
