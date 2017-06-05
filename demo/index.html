@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FittingModals - Contact Form</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../dist/fitting.min.css">
+	<script type="text/javascript" src="../dist/fitting.min.js"></script>
+
+</head>
+<body>
+	<header>
+		<div class="logo">fitting.js</div>
+		<nav>
+			<a href="#text"><span>Text</span></a>
+			<a href="#alert"><span>Alert</span></a>
+			<a href="#html"><span>HTML</span></a>
+			<a href="#confirm"><span>Confirmation</span></a>
+			<a href="#form"><span>Form</span></a>
+			<a href="https://github.com/Reaktive/fitting.js" target="_blank"><span>View on Github</span></a>
+		</nav>
+	</header>
+	<main>
+		<section class="App">
+			<div class="section" id="text">
+				<h1>text modal</h1>
+				<div class="trigger">
+					<nav class="dark">
+						<a href="javascript:;" onclick="ShowModal('text', 'dark', 'fade');"><span>Text Modal [Dark + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'dark', 'slide');"><span>Text Modal [Dark + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'dark', 'scale');"><span>Text Modal [Dark + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'dark', 'blur');"><span>Text Modal [Dark + Blur]</span></a>
+					</nav>
+					<nav class="light">
+						<a href="javascript:;" onclick="ShowModal('text', 'light', 'fade');"><span>Text Modal [Light + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'light', 'slide');"><span>Text Modal [Light + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'light', 'scale');"><span>Text Modal [Light + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('text', 'light', 'blur');"><span>Text Modal [Light + Blur]</span></a>
+					</nav>
+				</div>
+			</div>
+			<div class="section" id="alert">
+				<h1>alert modal</h1>
+				<div class="trigger">
+					<nav class="dark">
+						<a href="javascript:;" onclick="ShowModal('alert', 'dark', 'fade');"><span>Alert Modal [Dark + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'dark', 'slide');"><span>Alert Modal [Dark + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'dark', 'scale');"><span>Alert Modal [Dark + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'dark', 'blur');"><span>Alert Modal [Dark + Blur]</span></a>
+					</nav>
+					<nav class="light">
+						<a href="javascript:;" onclick="ShowModal('alert', 'light', 'fade');"><span>Alert Modal [Light + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'light', 'slide');"><span>Alert Modal [Light + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'light', 'scale');"><span>Alert Modal [Light + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('alert', 'light', 'blur');"><span>Alert Modal [Light + Blur]</span></a>
+					</nav>
+				</div>
+			</div>
+			<div class="section" id="html">
+				<h1>html modal</h1>
+				<div class="trigger">
+					<nav class="dark">
+						<a href="javascript:;" onclick="ShowModal('html', 'dark', 'fade');"><span>HTML Modal [Dark + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'dark', 'slide');"><span>HTML Modal [Dark + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'dark', 'scale');"><span>HTML Modal [Dark + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'dark', 'blur');"><span>HTML Modal [Dark + Blur]</span></a>
+					</nav>
+					<nav class="light">
+						<a href="javascript:;" onclick="ShowModal('html', 'light', 'fade');"><span>HTML Modal [Light + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'light', 'slide');"><span>HTML Modal [Light + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'light', 'scale');"><span>HTML Modal [Light + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('html', 'light', 'blur');"><span>HTML Modal [Light + Blur]</span></a>
+					</nav>
+				</div>
+			</div>
+			<div class="section" id="confirm">
+				<h1>confirm modal</h1>
+				<div class="trigger">
+					<nav class="dark">
+						<a href="javascript:;" onclick="ShowModal('confirm', 'dark', 'fade');"><span>Confirm Modal [Dark + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'dark', 'slide');"><span>Confirm Modal [Dark + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'dark', 'scale');"><span>Confirm Modal [Dark + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'dark', 'blur');"><span>Confirm Modal [Dark + Blur]</span></a>
+					</nav>
+					<nav class="light">
+						<a href="javascript:;" onclick="ShowModal('confirm', 'light', 'fade');"><span>Confirm Modal [Light + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'light', 'slide');"><span>Confirm Modal [Light + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'light', 'scale');"><span>Confirm Modal [Light + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('confirm', 'light', 'blur');"><span>Confirm Modal [Light + Blur]</span></a>
+					</nav>
+				</div>
+			</div>
+			<div class="section" id="form">
+				<h1>form modal</h1>
+				<div class="trigger">
+					<nav class="dark">
+						<a href="javascript:;" onclick="ShowModal('form', 'dark', 'fade');"><span>Form Modal [Dark + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'dark', 'slide');"><span>Form Modal [Dark + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'dark', 'scale');"><span>Form Modal [Dark + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'dark', 'blur');"><span>Form Modal [Dark + Blur]</span></a>
+					</nav>
+					<nav class="light">
+						<a href="javascript:;" onclick="ShowModal('form', 'light', 'fade');"><span>Form Modal [Light + Fade]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'light', 'slide');"><span>Form Modal [Light + Slide]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'light', 'scale');"><span>Form Modal [Light + Scale]</span></a>
+						<a href="javascript:;" onclick="ShowModal('form', 'light', 'blur');"><span>Form Modal [Light + Blur]</span></a>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>Code copyright 2017 CodePunkStudio. Code released under the <a href='https://github.com/Reaktive/fitting.js/blob/master/LICENSE' target='_blank'>MIT</a> License.</p>
+	</footer>
+	<script>
+		var Modal = new FittingModals();
+		var options = {};
+
+		function ShowModal(type, style, effect){
+			switch(type){
+				case "text":
+					options = {
+						parent : "main", // parent element: [tag, #id, .class]
+						container : "div", // container tag
+						content_type : type, // options: [text, alert, confirm, html, form]
+						effect : effect, // options: [slide, fade, scale, blur]
+						style: style, // options: [dark, light]
+						outter_click : true, // should we close the modal when clicking the parent?
+						title : "Text modal", // modal title
+						close: '<span class="icon">x</span>', // close button markup
+						text: "This is the main text for this modal", // text helper (visible in "content_type: form", "content_type: alert", "content_type: text")
+						onshow: function(){
+						  // fired when the modal is visible
+						},
+						onhide: function(){
+						  // fired when the modal is hidden
+						}
+					};
+				break;
+				case "alert":
+					options = {
+						parent : "main", // parent element: [tag, #id, .class]
+						container : "div", // container tag
+						content_type : type, // options: [text, alert, confirm, html, form]
+						effect : effect, // options: [slide, fade, scale, blur]
+						style: style, // options: [dark, light]
+						title : "Alert modal", // modal title
+						alert: { text: "This is the alert for this modal", button: "Cancel"},
+						onshow: function(){
+						  // fired when the modal is visible
+						},
+						onhide: function(){
+						  // fired when the modal is hidden
+						},
+						onconfirm: function(value){
+						  // fired when the form is confirmed
+						  Modal.hide();
+						  return false;
+						}
+					};
+				break;
+				case "html":
+					options = {
+						parent : "body", // parent element: [tag, #id, .class]
+						container : "div", // container tag
+						content_type : type, // options: [text, alert, confirm, html, form]
+						effect : effect, // options: [slide, fade, scale, blur]
+						style: style, // options: [dark, light]
+						title : "HTML modal", // modal title
+						close: "<span class='icon'>x</span>",
+						html: '<iframe width="100%" height="320" src="https://www.youtube.com/embed/jsCR05oKROA?ecver=1" frameborder="0" allowfullscreen></iframe>',
+						onshow: function(){
+						  // fired when the modal is visible
+						},
+						onhide: function(){
+						  // fired when the modal is hidden
+						}
+					};
+				break;
+				case "confirm":
+					options = {
+						parent : "main", // parent element: [tag, #id, .class]
+						container : "div", // container tag
+						content_type : type, // options: [text, alert, confirm, html, form]
+						effect : effect, // options: [slide, fade, scale, blur]
+						style: style, // options: [dark, light]
+						title : "Confirm modal", // modal title
+						text : "Do you like these modals?", // modal title
+						confirm_fields: [
+							{label: "Yes", value: "true"},
+							{label: "No", value: "false"},
+							{label: "Not so sure", value: "doubt"}
+						],
+						onconfirm: function(value){
+						  // fired when the form is confirmed
+						  Modal.hide();
+						  return false;
+						}
+					};
+				break;
+				case "form":
+					options = {
+						parent : "main", // parent element: [tag, #id, .class]
+						container : "div", // container tag
+						content_type : "form", // options: [text, alert, confirm, html, form]
+						class : "",  // fitting custom class
+						effect : "slide", // options: [slide, fade, scale, blur]
+						style: style, // options: [dark, light]
+						outter_click : true, // should we close the modal when clicking the parent?
+						title : "Contact Form", // modal title
+						close: '<span class="icon">Close</span>', // close button markup
+						html: "<p>Submit this form so we can contact you!</p>", // html markup (visible in "content_type: form" and "content_type: html")
+						submit_txt: "Submit", // submit button text (visible in "content_type: form")
+						text: "(*) required fields", // text helper (visible in "content_type: form", "content_type: alert", "content_type: text")
+						gui: { // custom styling uses CSS markup for each customizable element
+						  container: "",
+						  header: "",
+						  header_button: "",
+						  content: "",
+						  content_html: "",
+						  content_button: ""
+						},
+						confirm_fields: [ // available options when creating a confirmation modal
+						  {
+						    label: "Accept",
+						    value: "true"
+						  },{
+						    label: "Cancel",
+						    value: "false"
+						  }
+						],
+						form_fields: [ // form fields when creating a form modal -> types: [text, number, email, checkbox, radio, tel, textarea, select]
+						  {
+						    label: "First Name",
+						    name: "first_name",
+						    type: "text",
+						    placeholder: "Insert your first name (*)",
+						    value: "",
+						    required: true
+						  },{
+						    label: "Last Name",
+						    name: "last_name",
+						    type: "text",
+						    placeholder: "Insert your last name (*)",
+						    value: "",
+						    required: true
+						  },{
+						    label: "Email",
+						    name: "email",
+						    type: "email",
+						    placeholder: "Insert a valid email (*)",
+						    value: "",
+						    required: true
+						  },{
+						    label: "Telephone",
+						    name: "tel",
+						    type: "tel",
+						    placeholder: "Insert a telephone number",
+						    value: "",
+						    required: false
+						  },{
+						    label: "Subject",
+						    name: "subject",
+						    type: "text",
+						    placeholder: "Insert a subject",
+						    value: "",
+						    required: false
+						  },{
+						    label: "How did you hear about us?",
+						    name: "source",
+						    type: "select",
+						    placeholder: "Select an option",
+						    options:[ // options available in the select box
+						      { label: "Website advert", value: "web_advert"},
+						      { label: "Facebook", value: "facebook"},
+						      { label: "Twitter", value: "twitter"},
+						      { label: "Other", value: "other"}
+						    ],
+						    required: true
+						  },{
+						    label: "Message",
+						    name: "message",
+						    type: "textarea",
+						    placeholder: "Insert your message (*)",
+						    value: "",
+						    required: true
+						  }
+						],
+						onshow: function(){
+						  // fired when the modal is visible
+						},
+						onhide: function(){
+						  // fired when the modal is hidden
+						},
+						onsubmit: function(json, event){
+						  // fired when the form is submitted
+						  event.preventDefault();
+						},
+						onconfirm: function(value){
+						  // fired when the form is confirmed
+						  return false;
+						}
+					};
+				break;
+			}
+
+			Modal.init(options);
+			Modal.show();
+		}
+	</script>
+</body>
+</html>
