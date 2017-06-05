@@ -1,9 +1,9 @@
 # fitting.js
 Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
 
-# Demos
-* [Contact Form](https://jsfiddle.net/146qpfuo/2/)
-* [Confirmation request](https://jsfiddle.net/ws4mxkwe/4/)
+# Demo
+* [View Demo](https://cdn.rawgit.com/Reaktive/fitting.js/master/demo/index.html)
+
 
 # Usage
 
