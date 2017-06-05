@@ -8,15 +8,15 @@ function FittingModals(){
 	fitting.effect = "slide"; // [fade,slide,scale,blur]
 	fitting.style = "dark"; // [dark,light,custom]
 	fitting.outter_click = true; // [true,false]
-	fitting.title = "fitting.js";
-	fitting.close = "Close";
-	fitting.alert = "";
+	fitting.title = "";
+	fitting.close = "";
+	fitting.alert = {text: "", button: ""};
 	fitting.html = "";
 	fitting.text = "";
 	fitting.confirm_fields = [];
 	fitting.form_fields = [];
 	fitting.method = "POST";
-	fitting.submit_txt = "Send";
+	fitting.submit_txt = "Submit";
 	fitting.gui = { container: "", header: "", header_button: "", content: "", content_html: "", content_button:""};
 	/* EVENTS */
 	fitting.onshow = function(){};
@@ -35,9 +35,9 @@ function FittingModals(){
 			fitting.style = params.style === undefined ? "dark" : params.style; // [dark,light, custom]
 			fitting.outter_click = params.outter_click === undefined ? true : params.outter_click; // [true,false]
 			fitting.title = params.title === undefined ? "" : params.title;
-			fitting.close = params.close === undefined ? "Close" : params.close;
+			fitting.close = params.close === undefined ? "" : params.close;
 			fitting.text = params.text === undefined ? "" : params.text;
-			fitting.alert = params.alert === undefined ? "" : params.alert;
+			fitting.alert = params.alert === undefined ? { text: "", button: ""} : {text: params.alert.text, button: params.alert.button};
 			fitting.method = params.method === undefined ? "POST" : params.method;
 			fitting.submit_txt = params.submit_txt === undefined ? "" : params.submit_txt;
 			fitting.html = params.html === undefined ? "" : params.html;
@@ -69,7 +69,8 @@ function FittingModals(){
 		fitting.element.classList.add(fitting.effect);
 		fitting.element.classList.add("type_"+fitting.content_type);
 		fitting.element.classList.add(fitting.title === undefined || fitting.title === "" ? "fitting_no_title" : "fitting_with_title");
-		fitting.element.setAttribute("style", fitting.gui.container);
+		fitting.element.setAttribute("style",fitting.gui.container);
+
 		fitting.element.innerHTML =
 			'<div class="fitting_wrapper">'+
 				'<div class="fitting_modal '+fitting.class+'">'+
@@ -100,7 +101,17 @@ function FittingModals(){
 			document.querySelector("#fitting_form").submit = function(e){
 				fitting.onconfirm(e.value);
 			};
+		} else if(fitting.content_type === "alert"){
+			document.querySelector("#fitting_form").onsubmit = function(e){
+				fitting.hide();
+				return false;
+			};
+			document.querySelector("#fitting_form").submit = function(e){
+				fitting.hide();
+				return false;
+			};
 		}
+
 		var close_event = new Event('close_fitting');
 		if(fitting.outter_click === true){
 			document.querySelector('.fitting_modal').onclick = function(e){
@@ -134,7 +145,10 @@ function FittingModals(){
 					return fitting.text === undefined || fitting.text === "" ? "<p class='fitting_content_text'></p>" : "<p class='fitting_content_text'>"+fitting.text+"</p>";
 				break;
 				case "alert":
-					return fitting.alert === undefined || fitting.alert === "" ? "<p class='fitting_content_alert'></p>" : "<p class='fitting_content_alert'>"+fitting.alert+"</p>";
+					return "<form id='fitting_form' class='fitting_content_alert' method='"+fitting.method+"'>" +
+						(fitting.alert.text === undefined || fitting.alert.text === "" ? "" : "<p class='fitting_content_alert'>"+fitting.alert.text+"</p>") +
+						"<label class='fitting_button btn_alert' style='"+fitting.gui.content_button+"' for='fitting_submit'>"+(fitting.alert.button === undefined || fitting.alert.button === "" ? "" : fitting.alert.button)+"<input type='submit' id='fitting_submit'></label>"+
+					"</form>";
 				break;
 				case "confirm":
 					if( fitting.confirm_fields === undefined || fitting.confirm_fields.length < 1){
@@ -148,7 +162,7 @@ function FittingModals(){
 									var btn = "<div class='fitting_col' style='flex-grow:1'>";
 										if( fitting.confirm_fields[i].label !== undefined && fitting.confirm_fields[i].value !== undefined &&
 											fitting.confirm_fields[i].label !== "" && fitting.confirm_fields[i].value !== ""){
-											btn += "<label class='fitting_button_confirm btn"+i+"' style='"+fitting.gui.content_button+"'>"+fitting.confirm_fields[i].label+" <input type='radio' name='confirm' value='"+fitting.confirm_fields[i].value+"' onchange='document.getElementById(\"fitting_form\").submit(this)'></label>";
+											btn += "<label class='fitting_button btn_confirm_"+i+"' style='"+fitting.gui.content_button+"'>"+fitting.confirm_fields[i].label+" <input type='radio' name='confirm' value='"+fitting.confirm_fields[i].value+"' onchange='document.querySelector(\"#fitting_form\").submit(this)'></label>";
 										}
 									btn += "</div>";
 									mkp += btn;
@@ -315,17 +329,29 @@ function FittingModals(){
 		var fitting_style = window.getComputedStyle(fitting.fitting_modal, null);
 		var fitting_title_style = window.getComputedStyle(fitting.fitting_title, null);
 		var fitting_content_style = window.getComputedStyle(fitting.fitting_content, null);
-		var fitting_content_child_style = window.getComputedStyle(fitting.fitting_content.firstChild, null);
+		var fitting_content_child_style = window.getComputedStyle(fitting.fitting_content.childNodes[0], null);
+		var fitting_content_subchild_style = fitting.fitting_content.childNodes[0].childNodes[0].hasChildNodes() === true ? window.getComputedStyle(fitting.fitting_content.childNodes[0].childNodes[0], null) : null;
 		fitting.fitting_height =
 			parseInt(fitting_title_style.getPropertyValue("height")) +
 			parseInt(fitting_title_style.getPropertyValue("padding-top")) +
 			parseInt(fitting_title_style.getPropertyValue("padding-bottom")) +
+			parseInt(fitting_title_style.getPropertyValue("margin-top")) +
+			parseInt(fitting_title_style.getPropertyValue("margin-bottom")) +
 			parseInt(fitting_content_style.getPropertyValue("padding-top")) +
 			parseInt(fitting_content_style.getPropertyValue("padding-bottom")) +
+			parseInt(fitting_content_style.getPropertyValue("margin-top")) +
+			parseInt(fitting_content_style.getPropertyValue("margin-bottom")) +
+			(fitting_content_subchild_style === null ? 0 : parseInt(fitting_content_subchild_style.getPropertyValue("margin-top"))) +
 			parseInt(fitting_content_child_style.getPropertyValue("height")) +
 			parseInt(fitting_content_child_style.getPropertyValue("padding-top")) +
-			parseInt(fitting_content_child_style.getPropertyValue("padding-bottom"));
-		fitting.fitting_margin = parseInt((fitting.parent_element.offsetHeight - fitting.fitting_height) / 2);
+			parseInt(fitting_content_child_style.getPropertyValue("padding-bottom")) +
+			parseInt(fitting_content_child_style.getPropertyValue("margin-top")) +
+			parseInt(fitting_content_child_style.getPropertyValue("margin-bottom"));
+		var container_calc_height = parseInt(fitting.parent_element.offsetHeight);
+		fitting.element.setAttribute("style",fitting.gui.container);
+		container_calc_height = parseInt(window.innerHeight);
+		fitting.fitting_margin = (parseInt(container_calc_height) - fitting.fitting_height) / 2;
+
 		fitting.fitting_modal.style.height = fitting.fitting_height+"px";
 		fitting.fitting_modal.style.marginTop = Math.max(0,fitting.fitting_margin)+"px";
 		fitting.fitting_modal.style.marginBottom = Math.max(0,fitting.fitting_margin)+"px";
