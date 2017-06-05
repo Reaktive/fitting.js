@@ -29,7 +29,7 @@ Simple, fast, multipurpose, recyclable, customizable and dependency free modals!
     style: "dark", // options: [dark, light]
     outter_click : true, // should we close the modal when clicking the parent?
     title : "Contact Form", // modal title
-    close: '<i class="icon">Close</i>', // close button markup
+    close: '<span class="icon">Close</span>', // close button markup
     html: "<p>Submit this form so we can contact you!</p>", // html markup (visible in "content_type: form" and "content_type: html")
     submit_txt: "Submit", // submit button text (visible in "content_type: form")
     text: "(*) required fields", // text helper (visible in "content_type: form", "content_type: alert", "content_type: text")
