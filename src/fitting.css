@@ -1,5 +1,5 @@
 .fitting_container {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -11,15 +11,7 @@
 	opacity: 0;
 	transition: opacity ease-in-out 0.2s;
 	color: #fff;
-	font-family: Helvetica, Arial;
-}
-
-.fitting_container.blur{
-	transition: opacity ease-in-out 0.2s, filter linear 0.3s;
-	filter: blur(3px);
-}
-.fitting_container.blur.active {
-	filter: blur(0px);
+	font-family: sans-serif;
 }
 
 .fitting_container.active {
@@ -35,12 +27,11 @@
 	width: 100%;
 }
 
-
 .fitting_modal {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 480px;
+	max-width: 540px;
 	background: #333;
 	border-radius: 3px;
 	box-sizing: border-box;
@@ -48,6 +39,7 @@
 	max-height: 100%;
 	position: relative;
 	overflow: hidden;
+	width: 100%;
 }
 
 .fitting_container.fade .fitting_modal{
@@ -102,14 +94,10 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	padding: 0 10px;
 	height: 48px;
-	line-height: 48px;
 	text-decoration: none;
 	background: #333;
-	border-left: 1px solid rgba(150,150,150,0.5);
 	color: #888;
-	box-shadow: 2px -1px 6px -2px rgba(0,0,0,0.5) inset;
 }
 .fitting_close:hover {
 	background: rgba(0,0,0,0.5);
@@ -118,6 +106,10 @@
 .fitting_close .icon {
 	height: 48px;
 	line-height: 48px;
+	padding: 0 10px;
+	border-left: 1px solid rgba(150,150,150,0.5);
+	box-shadow: 2px -1px 6px -2px rgba(0,0,0,0.5) inset;
+	display: block;
 }
 .fitting_content {
 	position: absolute;
@@ -197,9 +189,10 @@
 .fitting_content .fitting_griddy > .fitting_col {
 	display: inline-block;
 	position: relative;
-	padding: 0px 10px 20px;
+	padding: 0px 10px 8px;
 	box-sizing: border-box;
-	min-width: 50%;
+	min-width: 33.33%;
+	margin: 6px 0 6px;
 }
 .type_confirm .fitting_content .fitting_griddy > .fitting_col {
 	padding: 0 10px 0;
@@ -231,11 +224,11 @@
 	color: #fff;
 }
 
-.fitting_content button.fitting_button_confirm {
+.fitting_content button.fitting_button {
 	width: 100%;
 }
 
-.fitting_button_confirm {
+.fitting_button {
 	text-align: center;
 	text-transform: uppercase;
 	padding: 0 10px;
@@ -253,12 +246,12 @@
 	cursor: pointer;
 	position: relative;
 }
-.fitting_button_confirm.btn1 {
+.fitting_button.btn_confirm_1 {
 	background: #999;
 	border-color: #bbb;
 }
 
-.fitting_button_confirm input {
+.fitting_button input {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -317,11 +310,14 @@
 	background: #ddd;
 	color: #999;
 	box-shadow: none;
-	border-left: 1px solid #ccc;
 }
 .fitting_container.light .fitting_close:hover{
 	background: #eee;
 	color: #444;
+}
+.fitting_container.light .fitting_close .icon{
+	border-left: 1px solid #ccc;
+	box-shadow: none;
 }
 .fitting_container.light .fitting_html {
 	color: #333;
@@ -337,7 +333,7 @@
 	color: #09d;
 }
 
-.fitting_container.light .fitting_button_confirm.btn1 {
+.fitting_container.light .fitting_button.btn_confirm_1 {
 	background: #333;
 	border-color: #000;
 }
